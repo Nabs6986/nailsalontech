@@ -39,5 +39,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/blog/how-to-choose-booking-software`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE_URL}/blog/hidden-fees-salon-software`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE_URL}/blog/independent-nail-tech-software-setup`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE_URL}/blog/booth-rental-software`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE_URL}/blog/reduce-no-shows`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+
+    // Week 2 Comparisons
+    { url: `${BASE_URL}/compare/booksy-vs-square`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
   ];
 }
