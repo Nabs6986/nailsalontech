@@ -22,6 +22,13 @@ const jsonLd = {
     name: "Square Appointments",
     url: "https://squareup.com/us/en/appointments",
     offers: { "@type": "Offer", priceCurrency: "USD", price: "0" },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.3",
+      reviewCount: "1",
+      bestRating: "5",
+      worstRating: "1",
+    },
   },
   datePublished: "2026-02-01",
   dateModified: "2026-02-17",

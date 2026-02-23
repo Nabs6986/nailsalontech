@@ -22,6 +22,13 @@ const jsonLd = {
     name: "Vagaro",
     url: "https://vagaro.com",
     offers: { "@type": "Offer", priceCurrency: "USD", price: "30", unitCode: "MON" },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.5",
+      reviewCount: "1",
+      bestRating: "5",
+      worstRating: "1",
+    },
   },
   datePublished: "2026-02-01",
   dateModified: "2026-02-17",

@@ -41,6 +41,13 @@ const jsonLd = {
     },
     description:
       "GlossGenius is an all-in-one salon and spa management software designed for beauty professionals, featuring online booking, payment processing, client management, and marketing tools.",
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.7",
+      reviewCount: "1",
+      bestRating: "5",
+      worstRating: "1",
+    },
   },
   reviewBody:
     "GlossGenius earns our top spot for nail salons thanks to its elegant client-facing booking experience, flat 2.6% payment processing rate, and nail-specific features like client cards and before/after photo storage. The platform is purpose-built for beauty professionals, and it shows.",

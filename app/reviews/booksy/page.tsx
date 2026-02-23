@@ -22,6 +22,13 @@ const jsonLd = {
     name: "Booksy",
     url: "https://booksy.com",
     offers: { "@type": "Offer", priceCurrency: "USD", price: "29.99", unitCode: "MON" },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.4",
+      reviewCount: "1",
+      bestRating: "5",
+      worstRating: "1",
+    },
   },
   datePublished: "2026-02-01",
   dateModified: "2026-02-17",
