@@ -13,6 +13,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/contact`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
     { url: `${BASE_URL}/pricing`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
 
+    // Guides
+    { url: `${BASE_URL}/guides`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE_URL}/guides/best-nail-salon-software-2026`, lastModified: now, changeFrequency: "monthly", priority: 0.95 },
+    { url: `${BASE_URL}/about-this-site`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
+
     // Reviews
     { url: `${BASE_URL}/reviews`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     { url: `${BASE_URL}/reviews/glossgenius`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },

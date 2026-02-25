@@ -1,0 +1,18 @@
+{
+  "siteName": "NailSalonTech",
+  "domain": "nailsalontech.com",
+  "category": "Nail Salon Software Reviews & Comparisons",
+  "focus": "Nail salon owners, nail technicians, and beauty professionals evaluating salon management software",
+  "methodology": "Independent research, feature analysis, and user interviews",
+  "editorialPolicy": "Affiliate-supported. Editorial opinions are independent.",
+  "updateFrequency": "Monthly reviews, quarterly rankings",
+  "lastUpdated": "2026-02-25",
+  "topPicks": [
+    { "rank": 1, "name": "Vagaro", "bestFor": "Overall best — all-in-one platform", "priceFrom": "$30/mo" },
+    { "rank": 2, "name": "GlossGenius", "bestFor": "Solo nail techs and mobile artists", "priceFrom": "$24/mo" },
+    { "rank": 3, "name": "Mangomint", "bestFor": "High-end salons needing automation", "priceFrom": "$165/mo" }
+  ],
+  "contactPage": "/contact",
+  "aboutPage": "/about",
+  "guidesPage": "/guides"
+}
