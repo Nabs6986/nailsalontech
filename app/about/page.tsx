@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Shield, Users, BarChart3, Mail } from "lucide-react";
+import { BreadcrumbSchema } from "@/components/schema/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "About NailSalonTech — Our Mission & Editorial Standards",
@@ -33,6 +34,13 @@ const values = [
 
 export default function AboutPage() {
   return (
+    <>
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "https://nailsalontech.com" },
+          { name: "About", url: "https://nailsalontech.com/about" },
+        ]}
+      />
     <div className="min-h-screen">
       {/* Hero */}
       <section className="bg-gradient-to-br from-brand-50 to-white pt-16 pb-12">
@@ -170,5 +178,6 @@ export default function AboutPage() {
         </div>
       </section>
     </div>
+    </>
   );
 }

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Mail, MessageCircle, Clock } from "lucide-react";
+import { BreadcrumbSchema } from "@/components/schema/BreadcrumbSchema";
 
 // Note: metadata must be in a server component; for client components use generateMetadata or put metadata in a parent
 // We'll keep this simple as a client component for the form
@@ -25,6 +26,13 @@ export default function ContactPage() {
   };
 
   return (
+    <>
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "https://nailsalontech.com" },
+          { name: "Contact", url: "https://nailsalontech.com/contact" },
+        ]}
+      />
     <div className="min-h-screen bg-slate-50">
       {/* Hero */}
       <section className="bg-white border-b border-slate-100 pt-14 pb-10">
@@ -165,5 +173,6 @@ export default function ContactPage() {
         </div>
       </div>
     </div>
+    </>
   );
 }

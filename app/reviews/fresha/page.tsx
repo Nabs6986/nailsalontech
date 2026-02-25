@@ -3,6 +3,9 @@ import Link from "next/link";
 import { Check, X, ArrowRight, ExternalLink, AlertTriangle } from "lucide-react";
 import { StarRating } from "@/components/StarRating";
 import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
+import { ReviewSchema } from "@/components/schema/ReviewSchema";
+import { SoftwareApplicationSchema } from "@/components/schema/SoftwareApplicationSchema";
+import { BreadcrumbSchema } from "@/components/schema/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "Fresha Review 2026 — Pricing, Marketplace Fee & Verdict for Nail Salons",
@@ -37,6 +40,28 @@ const jsonLd = {
 export default function FreshaReview() {
   return (
     <>
+      <ReviewSchema
+        name="Fresha Review for Nail Salons"
+        reviewBody="Fresha is best for nail salons in locations with strong Fresha marketplace activity. The 20% new-client fee sounds steep, but you only pay it once per new client."
+        ratingValue={4.4}
+        softwareName="Fresha"
+        softwareUrl="https://fresha.com"
+        price="$19.95"
+      />
+      <SoftwareApplicationSchema
+        name="Fresha"
+        description="Marketplace-powered salon software with payment processing, automated marketing, inventory management, and client management for nail salons."
+        rating={4.4}
+        price="$19.95"
+        url="https://nailsalontech.com/reviews/fresha"
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "https://nailsalontech.com" },
+          { name: "Reviews", url: "https://nailsalontech.com/reviews" },
+          { name: "Fresha", url: "https://nailsalontech.com/reviews/fresha" },
+        ]}
+      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="min-h-screen bg-slate-50">
         <section className="bg-white border-b border-slate-100 pt-10 pb-10">

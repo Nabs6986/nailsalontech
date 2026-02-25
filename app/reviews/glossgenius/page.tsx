@@ -3,6 +3,9 @@ import Link from "next/link";
 import { Check, X, ArrowRight, ExternalLink } from "lucide-react";
 import { StarRating } from "@/components/StarRating";
 import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
+import { ReviewSchema } from "@/components/schema/ReviewSchema";
+import { SoftwareApplicationSchema } from "@/components/schema/SoftwareApplicationSchema";
+import { BreadcrumbSchema } from "@/components/schema/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "GlossGenius Review 2026 — Pricing, Features & Verdict for Nail Salons",
@@ -87,6 +90,28 @@ const cons = [
 export default function GlossGeniusReview() {
   return (
     <>
+      <ReviewSchema
+        name="GlossGenius Review for Nail Salons"
+        reviewBody="GlossGenius earns our top spot for nail salons thanks to its elegant client-facing booking experience, flat 2.6% payment processing rate, and nail-specific features like client cards and before/after photo storage."
+        ratingValue={4.7}
+        softwareName="GlossGenius"
+        softwareUrl="https://glossgenius.com"
+        price="$24"
+      />
+      <SoftwareApplicationSchema
+        name="GlossGenius"
+        description="All-in-one salon and spa management software designed for beauty professionals, featuring online booking, payment processing, client management, and marketing tools."
+        rating={4.7}
+        price="$24"
+        url="https://nailsalontech.com/reviews/glossgenius"
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "https://nailsalontech.com" },
+          { name: "Reviews", url: "https://nailsalontech.com/reviews" },
+          { name: "GlossGenius", url: "https://nailsalontech.com/reviews/glossgenius" },
+        ]}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Check, ArrowRight } from "lucide-react";
 import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
+import { BreadcrumbSchema } from "@/components/schema/BreadcrumbSchema";
+import { ItemListSchema } from "@/components/schema/ItemListSchema";
 
 export const metadata: Metadata = {
   title: "Best Nail Salon Software for Multi-Location Salons 2026",
@@ -12,6 +14,22 @@ export const metadata: Metadata = {
 
 export default function MultiLocationSalons() {
   return (
+    <>
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "https://nailsalontech.com" },
+          { name: "Best", url: "https://nailsalontech.com/best" },
+          { name: "Best for Multi-Location Salons", url: "https://nailsalontech.com/best/multi-location-salons" },
+        ]}
+      />
+      <ItemListSchema
+        name="Best Nail Salon Software for Multi-Location Businesses 2026"
+        url="https://nailsalontech.com/best/multi-location-salons"
+        items={[
+          { name: "Vagaro", url: "https://nailsalontech.com/reviews/vagaro", description: "Per-calendar pricing that scales predictably for multi-location salons" },
+          { name: "GlossGenius Platinum", url: "https://nailsalontech.com/reviews/glossgenius", description: "Premium brand experience with full multi-location support" },
+        ]}
+      />
     <div className="min-h-screen bg-slate-50">
       <section className="bg-white border-b border-slate-100 pt-10 pb-10">
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
@@ -153,5 +171,6 @@ export default function MultiLocationSalons() {
         </div>
       </div>
     </div>
+    </>
   );
 }

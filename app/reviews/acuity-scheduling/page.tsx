@@ -3,6 +3,9 @@ import Link from "next/link";
 import { Check, X, ArrowRight, ExternalLink } from "lucide-react";
 import { StarRating } from "@/components/StarRating";
 import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
+import { ReviewSchema } from "@/components/schema/ReviewSchema";
+import { SoftwareApplicationSchema } from "@/components/schema/SoftwareApplicationSchema";
+import { BreadcrumbSchema } from "@/components/schema/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "Acuity Scheduling Review 2026 — Nail Salon Features & Pricing",
@@ -37,6 +40,28 @@ const jsonLd = {
 export default function AcuitySchedulingReview() {
   return (
     <>
+      <ReviewSchema
+        name="Acuity Scheduling Review for Nail Salons"
+        reviewBody="Acuity Scheduling is the most affordable paid option at $16/month annually, and it's excellent for nail techs who already use Squarespace. The intake form system is genuinely useful for capturing nail preferences."
+        ratingValue={4.2}
+        softwareName="Acuity Scheduling"
+        softwareUrl="https://acuityscheduling.com"
+        price="$16"
+      />
+      <SoftwareApplicationSchema
+        name="Acuity Scheduling"
+        description="Affordable scheduling software with powerful client intake forms, Squarespace integration, and Zapier connectivity for nail salons."
+        rating={4.2}
+        price="$16"
+        url="https://nailsalontech.com/reviews/acuity-scheduling"
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "https://nailsalontech.com" },
+          { name: "Reviews", url: "https://nailsalontech.com/reviews" },
+          { name: "Acuity Scheduling", url: "https://nailsalontech.com/reviews/acuity-scheduling" },
+        ]}
+      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="min-h-screen bg-slate-50">
         <section className="bg-white border-b border-slate-100 pt-10 pb-10">

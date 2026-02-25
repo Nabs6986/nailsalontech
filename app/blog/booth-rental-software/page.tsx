@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Check, ArrowRight, ExternalLink } from "lucide-react";
 import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
+import { ArticleSchema } from "@/components/schema/ArticleSchema";
+import { BreadcrumbSchema } from "@/components/schema/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "Nail Salon Software for Booth Renters: What You Actually Need (2026)",
@@ -148,6 +150,21 @@ const softwareOptions = [
 export default function BoothRentalSoftware() {
   return (
     <>
+      <ArticleSchema
+        title="Nail Salon Software for Booth Renters: What You Actually Need"
+        description="Independent nail techs who rent a booth need far less software than a full salon. This guide covers the minimal feature set, real costs, and the best picks for 2026."
+        author="NailSalonTech"
+        datePublished="2026-02-16"
+        dateModified="2026-02-17"
+        url="https://nailsalontech.com/blog/booth-rental-software"
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "https://nailsalontech.com" },
+          { name: "Blog", url: "https://nailsalontech.com/blog" },
+          { name: "Booth Rental Software", url: "https://nailsalontech.com/blog/booth-rental-software" },
+        ]}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}

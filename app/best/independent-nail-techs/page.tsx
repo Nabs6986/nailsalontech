@@ -3,6 +3,8 @@ import Link from "next/link";
 import { Check, ArrowRight } from "lucide-react";
 import { StarRating } from "@/components/StarRating";
 import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
+import { BreadcrumbSchema } from "@/components/schema/BreadcrumbSchema";
+import { ItemListSchema } from "@/components/schema/ItemListSchema";
 
 export const metadata: Metadata = {
   title: "Best Software for Independent Nail Techs 2026 — Solo Tech Guide",
@@ -46,6 +48,23 @@ const picks = [
 
 export default function IndependentNailTechs() {
   return (
+    <>
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "https://nailsalontech.com" },
+          { name: "Best", url: "https://nailsalontech.com/best" },
+          { name: "Best for Independent Nail Techs", url: "https://nailsalontech.com/best/independent-nail-techs" },
+        ]}
+      />
+      <ItemListSchema
+        name="Best Software for Independent Nail Techs 2026"
+        url="https://nailsalontech.com/best/independent-nail-techs"
+        items={[
+          { name: "GlossGenius Standard", url: "https://nailsalontech.com/reviews/glossgenius", description: "Purpose-built for solo beauty professionals at $24/mo" },
+          { name: "Square Appointments Free", url: "https://nailsalontech.com/reviews/square-appointments", description: "$0/month forever for solo nail techs" },
+          { name: "Booksy", url: "https://nailsalontech.com/reviews/booksy", description: "Marketplace exposure with zero commission on bookings" },
+        ]}
+      />
     <div className="min-h-screen bg-slate-50">
       <section className="bg-white border-b border-slate-100 pt-10 pb-10">
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
@@ -151,5 +170,6 @@ export default function IndependentNailTechs() {
         </div>
       </div>
     </div>
+    </>
   );
 }

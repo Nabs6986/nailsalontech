@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { BreadcrumbSchema } from "@/components/schema/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "Nail Salon Software Blog — Tips, Guides & Reviews",
@@ -46,6 +47,13 @@ const tagColors: Record<string, string> = {
 
 export default function BlogIndex() {
   return (
+    <>
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "https://nailsalontech.com" },
+          { name: "Blog", url: "https://nailsalontech.com/blog" },
+        ]}
+      />
     <div className="min-h-screen bg-slate-50">
       <section className="bg-white border-b border-slate-100 pt-14 pb-10">
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
@@ -78,5 +86,6 @@ export default function BlogIndex() {
         </div>
       </div>
     </div>
+    </>
   );
 }

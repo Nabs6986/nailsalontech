@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { BreadcrumbSchema } from "@/components/schema/BreadcrumbSchema";
+import { FAQSchema } from "@/components/schema/FAQSchema";
 
 export const metadata: Metadata = {
   title: "FAQ — Nail Salon Software Questions Answered",
@@ -148,6 +150,16 @@ const faqJsonLd = {
 
 export default function FAQPage() {
   return (
+    <>
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "https://nailsalontech.com" },
+          { name: "FAQ", url: "https://nailsalontech.com/faq" },
+        ]}
+      />
+      <FAQSchema
+        faqs={allQuestions.map((item) => ({ question: item.q, answer: item.a }))}
+      />
     <div className="min-h-screen">
       <script
         type="application/ld+json"
@@ -255,5 +267,6 @@ export default function FAQPage() {
         </div>
       </section>
     </div>
+    </>
   );
 }

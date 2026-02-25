@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { BreadcrumbSchema } from "@/components/schema/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "How We Review Nail Salon Software",
@@ -85,6 +86,13 @@ const criteria = [
 
 export default function HowWeReviewPage() {
   return (
+    <>
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "https://nailsalontech.com" },
+          { name: "How We Review", url: "https://nailsalontech.com/how-we-review" },
+        ]}
+      />
     <div className="min-h-screen">
       <script
         type="application/ld+json"
@@ -253,5 +261,6 @@ export default function HowWeReviewPage() {
         </div>
       </section>
     </div>
+    </>
   );
 }

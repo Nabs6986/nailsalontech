@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Check, X } from "lucide-react";
 import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
+import { BreadcrumbSchema } from "@/components/schema/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "Nail Salon Software Pricing Comparison 2026 — All Plans Compared",
@@ -187,6 +188,13 @@ const featureKeys: { key: keyof typeof pricingData[0]["features"]; label: string
 
 export default function PricingPage() {
   return (
+    <>
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "https://nailsalontech.com" },
+          { name: "Pricing", url: "https://nailsalontech.com/pricing" },
+        ]}
+      />
     <div className="min-h-screen bg-slate-50">
       {/* Hero */}
       <section className="bg-white border-b border-slate-100 pt-14 pb-10">
@@ -396,5 +404,6 @@ export default function PricingPage() {
         </div>
       </div>
     </div>
+    </>
   );
 }

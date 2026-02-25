@@ -3,6 +3,9 @@ import Link from "next/link";
 import { Check, X, ArrowRight, ExternalLink } from "lucide-react";
 import { StarRating } from "@/components/StarRating";
 import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
+import { ReviewSchema } from "@/components/schema/ReviewSchema";
+import { SoftwareApplicationSchema } from "@/components/schema/SoftwareApplicationSchema";
+import { BreadcrumbSchema } from "@/components/schema/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "Square Appointments Review 2026 — Free Nail Salon Booking Software",
@@ -37,6 +40,28 @@ const jsonLd = {
 export default function SquareAppointmentsReview() {
   return (
     <>
+      <ReviewSchema
+        name="Square Appointments Review for Nail Salons"
+        reviewBody="Square Appointments is genuinely free for solo nail techs — no monthly subscription, no booking fees, no trial that expires. Deeply integrated with the Square ecosystem."
+        ratingValue={4.3}
+        softwareName="Square Appointments"
+        softwareUrl="https://squareup.com/us/en/appointments"
+        price="$0"
+      />
+      <SoftwareApplicationSchema
+        name="Square Appointments"
+        description="Free booking software for solo nail technicians with integrated payment processing, POS, and the full Square ecosystem."
+        rating={4.3}
+        price="$0"
+        url="https://nailsalontech.com/reviews/square-appointments"
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "https://nailsalontech.com" },
+          { name: "Reviews", url: "https://nailsalontech.com/reviews" },
+          { name: "Square Appointments", url: "https://nailsalontech.com/reviews/square-appointments" },
+        ]}
+      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="min-h-screen bg-slate-50">
         <section className="bg-white border-b border-slate-100 pt-10 pb-10">

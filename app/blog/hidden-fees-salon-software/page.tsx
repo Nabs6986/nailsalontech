@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { AlertTriangle, ArrowRight } from "lucide-react";
+import { ArticleSchema } from "@/components/schema/ArticleSchema";
+import { BreadcrumbSchema } from "@/components/schema/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "Hidden Fees in Nail Salon Software: What to Watch For in 2026",
@@ -24,6 +26,21 @@ const articleJsonLd = {
 export default function HiddenFeesSalonSoftware() {
   return (
     <>
+      <ArticleSchema
+        title="Hidden Fees in Nail Salon Software: What to Watch For in 2026"
+        description="The real cost of nail salon software — hidden fees in payment processing, SMS, marketplace commissions, and add-ons."
+        author="NailSalonTech"
+        datePublished="2026-02-12"
+        dateModified="2026-02-17"
+        url="https://nailsalontech.com/blog/hidden-fees-salon-software"
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "https://nailsalontech.com" },
+          { name: "Blog", url: "https://nailsalontech.com/blog" },
+          { name: "Hidden Fees in Salon Software", url: "https://nailsalontech.com/blog/hidden-fees-salon-software" },
+        ]}
+      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
       <div className="min-h-screen bg-white">
         <section className="bg-gradient-to-br from-amber-50 to-white pt-14 pb-10 border-b border-slate-100">

@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Check, ArrowRight } from "lucide-react";
 import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
+import { ComparisonSchema } from "@/components/schema/ComparisonSchema";
+import { BreadcrumbSchema } from "@/components/schema/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "Vagaro vs Booksy 2026 — Best Nail Salon Marketplace Software?",
@@ -27,6 +29,21 @@ const rows = [
 
 export default function VagaroVsBooksy() {
   return (
+    <>
+      <ComparisonSchema
+        products={[
+          { name: "Vagaro", description: "Feature-rich salon software with built-in marketplace, loyalty, inventory, and POS starting at $30/mo" },
+          { name: "Booksy", description: "Beauty marketplace platform with 44M+ consumers, flat $29.99/mo pricing, and commission-free marketplace bookings" },
+        ]}
+        url="https://nailsalontech.com/compare/vagaro-vs-booksy"
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "https://nailsalontech.com" },
+          { name: "Compare", url: "https://nailsalontech.com/compare" },
+          { name: "Vagaro vs Booksy", url: "https://nailsalontech.com/compare/vagaro-vs-booksy" },
+        ]}
+      />
     <div className="min-h-screen bg-slate-50">
       <section className="bg-white border-b border-slate-100 pt-10 pb-10">
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
@@ -146,5 +163,6 @@ export default function VagaroVsBooksy() {
         </div>
       </div>
     </div>
+    </>
   );
 }

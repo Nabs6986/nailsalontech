@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { BreadcrumbSchema } from "@/components/schema/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "Best Nail Salon Software Guides 2026 — By Category",
@@ -17,6 +18,13 @@ const guides = [
 
 export default function BestIndex() {
   return (
+    <>
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "https://nailsalontech.com" },
+          { name: "Best", url: "https://nailsalontech.com/best" },
+        ]}
+      />
     <div className="min-h-screen bg-slate-50">
       <section className="bg-white border-b border-slate-100 pt-14 pb-10">
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
@@ -39,5 +47,6 @@ export default function BestIndex() {
         </div>
       </div>
     </div>
+    </>
   );
 }

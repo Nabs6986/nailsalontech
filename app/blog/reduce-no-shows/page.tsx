@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Check, ArrowRight, TrendingDown } from "lucide-react";
 import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
+import { ArticleSchema } from "@/components/schema/ArticleSchema";
+import { BreadcrumbSchema } from "@/components/schema/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "How Nail Salon Booking Software Reduces No-Shows (Real Data) — 2026",
@@ -116,6 +118,21 @@ const platformReminders = [
 export default function ReduceNoShows() {
   return (
     <>
+      <ArticleSchema
+        title="How Nail Salon Booking Software Reduces No-Shows (Real Data)"
+        description="Industry data on no-show rates in nail salons, how automated reminders reduce them, and how to configure deposits and cancellation policies to protect your income."
+        author="NailSalonTech"
+        datePublished="2026-02-10"
+        dateModified="2026-02-17"
+        url="https://nailsalontech.com/blog/reduce-no-shows"
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "https://nailsalontech.com" },
+          { name: "Blog", url: "https://nailsalontech.com/blog" },
+          { name: "Reduce No-Shows", url: "https://nailsalontech.com/blog/reduce-no-shows" },
+        ]}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}

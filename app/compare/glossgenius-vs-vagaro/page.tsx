@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Check, ArrowRight } from "lucide-react";
 import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
+import { ComparisonSchema } from "@/components/schema/ComparisonSchema";
+import { BreadcrumbSchema } from "@/components/schema/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "GlossGenius vs Vagaro 2026 — Which Is Better for Nail Salons?",
@@ -29,6 +31,21 @@ const comparisonRows = [
 
 export default function GlossGeniusVsVagaro() {
   return (
+    <>
+      <ComparisonSchema
+        products={[
+          { name: "GlossGenius", description: "Premium nail salon software with elegant booking, flat 2.6% payment processing, and AI marketing tools starting at $24/mo" },
+          { name: "Vagaro", description: "Feature-rich salon software with marketplace, loyalty programs, and inventory management starting at $30/mo" },
+        ]}
+        url="https://nailsalontech.com/compare/glossgenius-vs-vagaro"
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "https://nailsalontech.com" },
+          { name: "Compare", url: "https://nailsalontech.com/compare" },
+          { name: "GlossGenius vs Vagaro", url: "https://nailsalontech.com/compare/glossgenius-vs-vagaro" },
+        ]}
+      />
     <div className="min-h-screen bg-slate-50">
       <section className="bg-white border-b border-slate-100 pt-10 pb-10">
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
@@ -159,5 +176,6 @@ export default function GlossGeniusVsVagaro() {
         </div>
       </div>
     </div>
+    </>
   );
 }

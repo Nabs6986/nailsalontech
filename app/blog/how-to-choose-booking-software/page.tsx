@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { ArticleSchema } from "@/components/schema/ArticleSchema";
+import { BreadcrumbSchema } from "@/components/schema/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "How to Choose Booking Software for Your Nail Salon in 2026",
@@ -30,6 +32,21 @@ const articleJsonLd = {
 export default function HowToChooseBookingSoftware() {
   return (
     <>
+      <ArticleSchema
+        title="How to Choose Booking Software for Your Nail Salon in 2026"
+        description="A complete guide to choosing nail salon booking software in 2026."
+        author="NailSalonTech"
+        datePublished="2026-02-10"
+        dateModified="2026-02-17"
+        url="https://nailsalontech.com/blog/how-to-choose-booking-software"
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "https://nailsalontech.com" },
+          { name: "Blog", url: "https://nailsalontech.com/blog" },
+          { name: "How to Choose Booking Software", url: "https://nailsalontech.com/blog/how-to-choose-booking-software" },
+        ]}
+      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
       <div className="min-h-screen bg-white">
         {/* Header */}

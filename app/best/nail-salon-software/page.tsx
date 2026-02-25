@@ -3,6 +3,8 @@ import Link from "next/link";
 import { Check, ExternalLink } from "lucide-react";
 import { StarRating } from "@/components/StarRating";
 import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
+import { BreadcrumbSchema } from "@/components/schema/BreadcrumbSchema";
+import { ItemListSchema } from "@/components/schema/ItemListSchema";
 
 export const metadata: Metadata = {
   title: "Best Nail Salon Software 2026 — Top 6 Platforms Ranked & Reviewed",
@@ -105,6 +107,25 @@ const picks = [
 export default function BestNailSalonSoftware() {
   return (
     <>
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "https://nailsalontech.com" },
+          { name: "Best", url: "https://nailsalontech.com/best" },
+          { name: "Best Nail Salon Software 2026", url: "https://nailsalontech.com/best/nail-salon-software" },
+        ]}
+      />
+      <ItemListSchema
+        name="Best Nail Salon Software 2026"
+        url="https://nailsalontech.com/best/nail-salon-software"
+        items={[
+          { name: "GlossGenius", url: "https://nailsalontech.com/reviews/glossgenius", description: "Top pick for nail salons with elegant booking and flat 2.6% processing" },
+          { name: "Vagaro", url: "https://nailsalontech.com/reviews/vagaro", description: "Best for multi-staff salons with marketplace and loyalty programs" },
+          { name: "Fresha", url: "https://nailsalontech.com/reviews/fresha", description: "Marketplace-powered platform with lowest payment processing rate" },
+          { name: "Square Appointments", url: "https://nailsalontech.com/reviews/square-appointments", description: "Best free option for solo nail technicians" },
+          { name: "Booksy", url: "https://nailsalontech.com/reviews/booksy", description: "Commission-free marketplace with 44M+ consumers" },
+          { name: "Acuity Scheduling", url: "https://nailsalontech.com/reviews/acuity-scheduling", description: "Most affordable paid option with Squarespace integration" },
+        ]}
+      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="min-h-screen bg-slate-50">
         <section className="bg-white border-b border-slate-100 pt-10 pb-10">

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Check, ArrowRight } from "lucide-react";
+import { ArticleSchema } from "@/components/schema/ArticleSchema";
+import { BreadcrumbSchema } from "@/components/schema/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "Going Independent: Complete Software Setup for Solo Nail Techs (2026)",
@@ -24,6 +26,21 @@ const articleJsonLd = {
 export default function IndependentNailTechSoftwareSetup() {
   return (
     <>
+      <ArticleSchema
+        title="Going Independent: Complete Software Setup for Solo Nail Techs"
+        description="Step-by-step guide to setting up all the software a solo nail technician needs to run a professional, profitable business."
+        author="NailSalonTech"
+        datePublished="2026-02-14"
+        dateModified="2026-02-17"
+        url="https://nailsalontech.com/blog/independent-nail-tech-software-setup"
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "https://nailsalontech.com" },
+          { name: "Blog", url: "https://nailsalontech.com/blog" },
+          { name: "Independent Nail Tech Software Setup", url: "https://nailsalontech.com/blog/independent-nail-tech-software-setup" },
+        ]}
+      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
       <div className="min-h-screen bg-white">
         <section className="bg-gradient-to-br from-navy-50 to-white pt-14 pb-10 border-b border-slate-100">

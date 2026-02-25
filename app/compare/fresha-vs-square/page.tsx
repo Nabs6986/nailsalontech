@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Check, ArrowRight } from "lucide-react";
 import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
+import { ComparisonSchema } from "@/components/schema/ComparisonSchema";
+import { BreadcrumbSchema } from "@/components/schema/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "Fresha vs Square Appointments 2026 — Nail Salon Comparison",
@@ -25,6 +27,21 @@ const rows = [
 
 export default function FreshaVsSquare() {
   return (
+    <>
+      <ComparisonSchema
+        products={[
+          { name: "Fresha", description: "Marketplace-powered salon software with 2.29% payment processing, starting at $19.95/mo plus 20% new client marketplace fee" },
+          { name: "Square Appointments", description: "Free booking software for solo nail techs with integrated Square ecosystem and 2.6% + $0.10 processing" },
+        ]}
+        url="https://nailsalontech.com/compare/fresha-vs-square"
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "https://nailsalontech.com" },
+          { name: "Compare", url: "https://nailsalontech.com/compare" },
+          { name: "Fresha vs Square Appointments", url: "https://nailsalontech.com/compare/fresha-vs-square" },
+        ]}
+      />
     <div className="min-h-screen bg-slate-50">
       <section className="bg-white border-b border-slate-100 pt-10 pb-10">
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
@@ -133,5 +150,6 @@ export default function FreshaVsSquare() {
         </div>
       </div>
     </div>
+    </>
   );
 }

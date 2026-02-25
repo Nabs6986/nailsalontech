@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { StarRating } from "@/components/StarRating";
 import { tools } from "@/lib/tools";
+import { BreadcrumbSchema } from "@/components/schema/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "Nail Salon Software Reviews 2026 — All 6 Platforms Reviewed",
@@ -12,6 +13,13 @@ export const metadata: Metadata = {
 
 export default function ReviewsIndex() {
   return (
+    <>
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "https://nailsalontech.com" },
+          { name: "Reviews", url: "https://nailsalontech.com/reviews" },
+        ]}
+      />
     <div className="min-h-screen bg-slate-50">
       <section className="bg-white border-b border-slate-100 pt-14 pb-10">
         <div className="mx-auto max-w-5xl px-4 sm:px-6">
@@ -42,5 +50,6 @@ export default function ReviewsIndex() {
         </div>
       </div>
     </div>
+    </>
   );
 }

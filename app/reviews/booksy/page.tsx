@@ -3,6 +3,9 @@ import Link from "next/link";
 import { Check, X, ArrowRight, ExternalLink } from "lucide-react";
 import { StarRating } from "@/components/StarRating";
 import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
+import { ReviewSchema } from "@/components/schema/ReviewSchema";
+import { SoftwareApplicationSchema } from "@/components/schema/SoftwareApplicationSchema";
+import { BreadcrumbSchema } from "@/components/schema/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "Booksy Review 2026 — Nail Salon Booking Software Pricing & Features",
@@ -37,6 +40,28 @@ const jsonLd = {
 export default function BooksyReview() {
   return (
     <>
+      <ReviewSchema
+        name="Booksy Review for Nail Salons"
+        reviewBody="Booksy stands out for its massive consumer marketplace — 310,000 beauty pros and 44 million consumers. The flat $29.99/month pricing model with all features included is transparent and predictable."
+        ratingValue={4.4}
+        softwareName="Booksy"
+        softwareUrl="https://booksy.com"
+        price="$29.99"
+      />
+      <SoftwareApplicationSchema
+        name="Booksy"
+        description="Beauty marketplace platform with booking, no-show protection, marketing tools, and 44M+ consumer reach for nail salons."
+        rating={4.4}
+        price="$29.99"
+        url="https://nailsalontech.com/reviews/booksy"
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "https://nailsalontech.com" },
+          { name: "Reviews", url: "https://nailsalontech.com/reviews" },
+          { name: "Booksy", url: "https://nailsalontech.com/reviews/booksy" },
+        ]}
+      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="min-h-screen bg-slate-50">
         <section className="bg-white border-b border-slate-100 pt-10 pb-10">

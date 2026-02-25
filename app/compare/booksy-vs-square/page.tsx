@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Check, X, ArrowRight, ExternalLink } from "lucide-react";
 import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
+import { ComparisonSchema } from "@/components/schema/ComparisonSchema";
+import { BreadcrumbSchema } from "@/components/schema/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "Booksy vs Square Appointments 2026 — Which Is Better for Nail Salons?",
@@ -137,6 +139,20 @@ const rows = [
 export default function BooksyVsSquare() {
   return (
     <>
+      <ComparisonSchema
+        products={[
+          { name: "Booksy", description: "Beauty marketplace platform with 44M+ consumers, flat $29.99/mo pricing, commission-free marketplace bookings, and all features included" },
+          { name: "Square Appointments", description: "Free-to-start booking software for nail techs with full Square ecosystem integration, POS hardware, and 2.6% + $0.10 processing" },
+        ]}
+        url="https://nailsalontech.com/compare/booksy-vs-square"
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "https://nailsalontech.com" },
+          { name: "Compare", url: "https://nailsalontech.com/compare" },
+          { name: "Booksy vs Square Appointments", url: "https://nailsalontech.com/compare/booksy-vs-square" },
+        ]}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(comparisonJsonLd) }}

@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Check, X, ArrowRight } from "lucide-react";
 import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
+import { BreadcrumbSchema } from "@/components/schema/BreadcrumbSchema";
+import { ItemListSchema } from "@/components/schema/ItemListSchema";
 
 export const metadata: Metadata = {
   title: "Best Free Nail Salon Booking Software 2026 — Zero Cost Options",
@@ -12,6 +14,22 @@ export const metadata: Metadata = {
 
 export default function FreeSoftware() {
   return (
+    <>
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "https://nailsalontech.com" },
+          { name: "Best", url: "https://nailsalontech.com/best" },
+          { name: "Best Free Booking Software", url: "https://nailsalontech.com/best/free-booking-software" },
+        ]}
+      />
+      <ItemListSchema
+        name="Best Free Nail Salon Booking Software 2026"
+        url="https://nailsalontech.com/best/free-booking-software"
+        items={[
+          { name: "Square Appointments", url: "https://nailsalontech.com/reviews/square-appointments", description: "Genuinely free for solo nail techs with $0/month subscription" },
+          { name: "Fresha", url: "https://nailsalontech.com/reviews/fresha", description: "Marketplace-powered platform starting at $19.95/month" },
+        ]}
+      />
     <div className="min-h-screen bg-slate-50">
       <section className="bg-white border-b border-slate-100 pt-10 pb-10">
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
@@ -124,5 +142,6 @@ export default function FreeSoftware() {
         </div>
       </div>
     </div>
+    </>
   );
 }

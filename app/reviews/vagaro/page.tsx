@@ -3,6 +3,9 @@ import Link from "next/link";
 import { Check, X, ArrowRight, ExternalLink } from "lucide-react";
 import { StarRating } from "@/components/StarRating";
 import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
+import { ReviewSchema } from "@/components/schema/ReviewSchema";
+import { SoftwareApplicationSchema } from "@/components/schema/SoftwareApplicationSchema";
+import { BreadcrumbSchema } from "@/components/schema/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "Vagaro Review 2026 — Pricing, Features & Verdict for Nail Salons",
@@ -37,6 +40,28 @@ const jsonLd = {
 export default function VagaroReview() {
   return (
     <>
+      <ReviewSchema
+        name="Vagaro Review for Nail Salons"
+        reviewBody="Vagaro is the best nail salon software for multi-staff salons that want marketplace visibility. The free Vagaro Marketplace listing gets your salon in front of clients actively searching for nail services."
+        ratingValue={4.5}
+        softwareName="Vagaro"
+        softwareUrl="https://vagaro.com"
+        price="$30"
+      />
+      <SoftwareApplicationSchema
+        name="Vagaro"
+        description="Feature-rich salon software with built-in marketplace, loyalty programs, inventory management, and multi-staff scheduling for nail salons."
+        rating={4.5}
+        price="$30"
+        url="https://nailsalontech.com/reviews/vagaro"
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "https://nailsalontech.com" },
+          { name: "Reviews", url: "https://nailsalontech.com/reviews" },
+          { name: "Vagaro", url: "https://nailsalontech.com/reviews/vagaro" },
+        ]}
+      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="min-h-screen bg-slate-50">
         <section className="bg-white border-b border-slate-100 pt-10 pb-10">

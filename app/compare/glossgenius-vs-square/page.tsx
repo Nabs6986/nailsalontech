@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Check, ArrowRight } from "lucide-react";
 import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
+import { ComparisonSchema } from "@/components/schema/ComparisonSchema";
+import { BreadcrumbSchema } from "@/components/schema/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "GlossGenius vs Square Appointments 2026 — Nail Salon Comparison",
@@ -28,6 +30,21 @@ const rows = [
 
 export default function GlossGeniusVsSquare() {
   return (
+    <>
+      <ComparisonSchema
+        products={[
+          { name: "GlossGenius", description: "Premium nail salon software with nail-specific client cards, elegant booking, and flat 2.6% processing starting at $24/mo" },
+          { name: "Square Appointments", description: "Free booking software for solo techs with Square ecosystem integration and 2.6% + $0.10 processing" },
+        ]}
+        url="https://nailsalontech.com/compare/glossgenius-vs-square"
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "https://nailsalontech.com" },
+          { name: "Compare", url: "https://nailsalontech.com/compare" },
+          { name: "GlossGenius vs Square Appointments", url: "https://nailsalontech.com/compare/glossgenius-vs-square" },
+        ]}
+      />
     <div className="min-h-screen bg-slate-50">
       <section className="bg-white border-b border-slate-100 pt-10 pb-10">
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
@@ -134,5 +151,6 @@ export default function GlossGeniusVsSquare() {
         </div>
       </div>
     </div>
+    </>
   );
 }

@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Check, Star, ArrowRight, Shield, TrendingUp, Users, Zap } from "lucide-react";
 import { StarRating } from "@/components/StarRating";
 import { tools } from "@/lib/tools";
+import { BreadcrumbSchema } from "@/components/schema/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "NailSalonTech — Best Nail Salon Software Reviews 2026",
@@ -87,6 +88,11 @@ const featuredCategories = [
 export default function HomePage() {
   return (
     <>
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "https://nailsalontech.com" },
+        ]}
+      />
       {/* JSON-LD */}
       <script
         type="application/ld+json"
