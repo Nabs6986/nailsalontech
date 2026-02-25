@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { BreadcrumbSchema } from "@/components/schema/BreadcrumbSchema";
+import { getAllPosts } from "./_data/posts";
 
 export const metadata: Metadata = {
   title: "Nail Salon Software Blog — Tips, Guides & Reviews",
@@ -9,43 +10,30 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://nailsalontech.com/blog" },
 };
 
-const posts = [
-  {
-    title: "How to Choose Booking Software for Your Nail Salon in 2026",
-    excerpt: "A complete guide to choosing nail salon booking software. What features matter, pricing traps to avoid, and how to match software to your salon type.",
-    href: "/blog/how-to-choose-booking-software",
-    date: "February 10, 2026",
-    readTime: "12 min",
-    tag: "Guide",
-    tagColor: "brand",
-  },
-  {
-    title: "Hidden Fees in Salon Software: What to Watch For in 2026",
-    excerpt: "The subscription price is just the beginning. Payment processing, SMS overages, marketplace commissions, and add-ons — here's the full picture.",
-    href: "/blog/hidden-fees-salon-software",
-    date: "February 12, 2026",
-    readTime: "10 min",
-    tag: "Pricing",
-    tagColor: "amber",
-  },
-  {
-    title: "Going Independent: Complete Software Setup for Solo Nail Techs",
-    excerpt: "Step-by-step setup guide for independent nail techs. Booking, payments, marketing, accounting — everything you need from Day 1.",
-    href: "/blog/independent-nail-tech-software-setup",
-    date: "February 14, 2026",
-    readTime: "14 min",
-    tag: "Complete Guide",
-    tagColor: "navy",
-  },
-];
-
-const tagColors: Record<string, string> = {
-  brand: "bg-brand-100 text-brand-700",
-  amber: "bg-amber-100 text-amber-700",
-  navy: "bg-indigo-100 text-indigo-700",
+const categoryColors: Record<string, string> = {
+  Guide: "bg-brand-100 text-brand-700",
+  Pricing: "bg-amber-100 text-amber-700",
+  "Complete Guide": "bg-indigo-100 text-indigo-700",
+  Ranking: "bg-emerald-100 text-emerald-700",
+  Alternatives: "bg-violet-100 text-violet-700",
+  "Industry Trends": "bg-sky-100 text-sky-700",
+  Operations: "bg-rose-100 text-rose-700",
 };
 
+function formatDate(dateStr: string): string {
+  const date = new Date(dateStr + "T00:00:00");
+  return date.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+}
+
 export default function BlogIndex() {
+  const allPosts = getAllPosts().sort(
+    (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+  );
+
   return (
     <>
       <BreadcrumbSchema
@@ -64,13 +52,21 @@ export default function BlogIndex() {
 
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid gap-6">
-          {posts.map((post) => (
-            <Link key={post.href} href={post.href} className="group card hover:border-brand-200 hover:shadow-lg transition-all duration-200">
+          {allPosts.map((post) => (
+            <Link
+              key={post.slug}
+              href={`/blog/${post.slug}`}
+              className="group card hover:border-brand-200 hover:shadow-lg transition-all duration-200"
+            >
               <div className="flex items-start justify-between gap-4">
                 <div>
                   <div className="flex items-center gap-2 mb-3">
-                    <span className={`text-xs font-semibold rounded-full px-2.5 py-0.5 ${tagColors[post.tagColor]}`}>{post.tag}</span>
-                    <span className="text-xs text-slate-400">{post.date} · {post.readTime} read</span>
+                    <span className={`text-xs font-semibold rounded-full px-2.5 py-0.5 ${categoryColors[post.category] || "bg-slate-100 text-slate-700"}`}>
+                      {post.category}
+                    </span>
+                    <span className="text-xs text-slate-400">
+                      {formatDate(post.publishedAt)} · {post.readingTime} min read
+                    </span>
                   </div>
                   <h2 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-brand-700 transition-colors leading-tight">
                     {post.title}
