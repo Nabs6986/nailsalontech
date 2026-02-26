@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { getAllAlternativesSlugs } from "./alternatives/_data/alternatives";
 
 const BASE_URL = "https://nailsalontech.com";
 
@@ -51,5 +52,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Week 2 Comparisons
     { url: `${BASE_URL}/compare/booksy-vs-square`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
+
+    // Alternatives
+    { url: `${BASE_URL}/alternatives`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
+    ...getAllAlternativesSlugs().map((slug) => ({
+      url: `${BASE_URL}/alternatives/${slug}`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.85,
+    })),
   ];
 }
